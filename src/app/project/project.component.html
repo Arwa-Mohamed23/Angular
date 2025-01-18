@@ -1,0 +1,17 @@
+<div class="container my-5">
+    <h2 class="text-center">Portfolio</h2>
+    <div class="row">
+        @for(project of projects; track $index) {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="" class="card-img-top" alt="Project">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+                    <a href="{{ project.link }}" target="_blank" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
