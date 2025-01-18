@@ -1,0 +1,10 @@
+<div class="container my-5">
+    <app-to-do-form (sendTask)="receiveTask($event)"></app-to-do-form>
+    <div class="container my-5">
+        <ul class="list-group">
+            @for (task of tasks; track $index) {
+            <app-to-do-list [taskItem]="{task,$index}" (sendidTask)="deleteTask($event)"></app-to-do-list>
+            }
+        </ul>
+    </div>
+</div>

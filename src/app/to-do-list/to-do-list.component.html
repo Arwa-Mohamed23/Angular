@@ -1,0 +1,4 @@
+<li class="list-group-item" [ngStyle]="{'text-decoration':iscomplete?'line-through':''}" >{{taskItem.task}}
+    <button type="button" class="btn btn-danger btn-sm mx-5" (click)="handleDeleteTask(taskItem.$index)">Delete</button>
+    <button type="button" class="btn btn-success btn-sm" (click)="handleCompleteTask()">Complete</button>
+</li>
