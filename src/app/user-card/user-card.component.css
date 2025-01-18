@@ -1,0 +1,13 @@
+.card{
+    background-color: #eee;
+    border: 2px solid rgb(148, 203, 212);
+    text-align: center;
+}
+
+img{
+
+    border: 2px solid rgb(148, 203, 212);
+    border-radius: 50%;
+    width: 50%;
+    margin: 10px auto;
+}

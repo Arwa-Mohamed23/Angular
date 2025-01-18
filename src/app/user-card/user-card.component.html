@@ -1,0 +1,16 @@
+<div class="card h-100">
+    <img [src]="userCard.image" class="card-img-top" alt="profile image">
+    <div class="card-body">
+        @if(userCard.role=='admin'){
+            <span class="badge text-bg-danger my-2">Admin</span>
+        }@else if (userCard.role=='user') {
+            <span class="badge text-bg-success my-2">user</span>
+        }@else {
+            <span class="badge text-bg-warning my-2">Moderator</span>
+        }
+        <h5 class="card-title">{{userCard.username}}</h5>
+        <p class="card-text">Email: {{userCard.email}}</p>
+        <p class="card-text">Phone: {{userCard.phone}}</p>
+        <p class="card-text">Birthdate: {{userCard.birthDate}}</p>
+    </div>
+</div>
