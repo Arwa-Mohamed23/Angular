@@ -1,0 +1,14 @@
+<div class="card h-100 shadow p-3 mb-5 bg-body-tertiary rounded">
+    <img [src]="productCard.images[0]" class="card-img-top" alt="product image">
+    <div class="card-body">
+        <span class="card-header badge rounded-pill my-2" [ngClass]="{'text-bg-danger':productCard.stock === 0,'text-bg-success':productCard.stock > 0}" >
+            {{productCard.stock === 0 ? "out of stock" : "in stock"}}
+        </span>
+        <h5 class="card-title">{{productCard.title}}</h5>
+        <p class="card-text">{{productCard.price | currency}}</p>
+        <p class="card-text">{{ productCard.rating}}</p>
+        <p class="card-text" [innerHTML]=" productCard.rating | starRating" style="color: goldenrod;"></p>
+         <button type="button" class="btn btn-outline-success mx-3" (click)="handleAddCart()">Add to Cart</button>
+         <button type="button" class="btn btn-success" (click)="handleDetailsItem(productCard.id)">view Details</button>
+    </div>
+</div>

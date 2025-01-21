@@ -1,0 +1,8 @@
+.active-link{
+    color: green;
+    font-weight: bold;
+}
+
+#navbarNavAltMarkup{
+    justify-content: right;
+}

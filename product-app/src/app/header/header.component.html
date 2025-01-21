@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Products App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active-link" >Register</a>
+          <a class="nav-link" routerLink="/login" routerLinkActive="active-link" >Login</a>
+            <button type="button" class="position-relative" routerLink="/cart" routerLinkActive="active-link">
+              <fa-icon [icon]="facart"></fa-icon>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                {{counterproduct}}
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+        </div>
+      </div>
+    </div>
+  </nav>
