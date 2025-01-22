@@ -1,1 +1,56 @@
-<p>cart works!</p>
+<div class="container my-5">
+    @if(cartProducts.size === 0){
+    <h1>Your Cart Is Empty</h1>
+    }@else {
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Description</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Remove</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @for (productData of product; track productData.id) {
+            @if(cartProducts.get(productData.id)){
+            <tr>
+                <td>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img [src]="productData.images[0]" class="img-fluid rounded-start" alt="product image">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{productData.title}}</h5>
+                                    <p class="card-text"><small
+                                            class="text-body-secondary">{{productData.brand}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-danger" (click)="decreaseCounter(productData.id)">-1</button>
+                        <p class="mx-2 mb-0"> {{cartProducts.get(productData.id)}} </p>
+                        <button class="btn btn-success" (click)="increaseCounter(productData.id)">+1</button>
+                    </div>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="deleteProduct(productData.id)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+                <td>{{((cartProducts.get(productData.id)|| 0)*productData.price) | currency}}</td>
+            </tr>
+            }
+            }
+        </tbody>
+        <tfoot>
+            <h3>Total Price: {{ getTotalPrice() | currency }}</h3>
+        </tfoot>
+    </table>
+    }
+</div>

@@ -30,7 +30,9 @@ export class ProductCardComponent {
     this.router.navigate(['/product-details',id]);
   }
 
-  handleAddCart(){
+  handleAddCart(id: number){
+    this.counterService.addProduct(id);
     this.counterService.setCounter(this.counterproduct+1);
+    // console.log(id, this.productCartFreq);
   }
 }
